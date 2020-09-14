@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import {Navbar,NavbarBrand,Nav,NavbarToggler,Collapse,NavItem,Jumbotron,Button,Modal,ModalHeader,ModalBody,Form, FormGroup, Input, Label} from "reactstrap"
+import {Navbar,NavbarBrand,Nav,NavbarToggler,Collapse,NavItem} from "reactstrap"
 import {NavLink} from "react-router-dom";
 class Header extends Component{
     constructor(){
@@ -42,7 +42,7 @@ class Header extends Component{
                 <div className="container">
                     <NavbarToggler onClick={this.toggleNav}/>
                     <NavbarBrand className="mr-auto" href="#">
-                        <img src="assets/images/logo.png" height="30" width="41"></img>
+                        <img src="assets/images/logo.png" height="30" width="41" alt="logo"></img>
                     </NavbarBrand>
                     <Collapse isOpen={this.state.isNavOpen} navbar>
                     <Nav navbar>
@@ -72,57 +72,15 @@ class Header extends Component{
                             </NavLink>
                         </NavItem>
                     </Nav>
-                    <Nav className="ml-auto" navbar>   
-                        <NavItem>
-                        <NavLink className="nav-link" to="/register">
-
-                            <Button outline onClick={this.toggleModal}>
-                            <span className="fa fa-sign-in fa-lg"></span> Register
-
-                            </Button>
-                            </NavLink>
-                        </NavItem>
-                    </Nav>
+                    
                     </Collapse>
                 </div>
             </Navbar>
-            <Jumbotron className="jumbo">
-                <div className="container">
-                    <div className="row row-header">
-                        <div className="col-12 col-sm-6">
-                            <h1>MOVIE BAZAR</h1>
-                            <p>We take inspiration from the World's best Artists, and create a unique fusion experience.We Bring best to you!!</p>
-                        </div>
-                    </div>
+            <div className="container">
+                <div  style={{textAlign:'center'}}>
+                   <centre><h1 style={{color:'white'}}>MoviesBazar</h1></centre> 
                 </div>
-
-            </Jumbotron>
-
-            {/* <Modal isOpen={this.state.isModalOpen} toogle={this.toggleModal}>
-                <ModalHeader toogle={this.toggleModal}>Login</ModalHeader>
-                <ModalBody>
-                <Form onSubmit={this.handleLogin}>
-                            <FormGroup>
-                                <Label htmlFor="username">Username</Label>
-                                <Input type="text" id="username" name="username"
-                                    innerRef={(input) => this.username = input} />
-                            </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="password">Password</Label>
-                                <Input type="password" id="password" name="password"
-                                    innerRef={(input) => this.password = input}  />
-                            </FormGroup>
-                            <FormGroup check>
-                                <Label check>
-                                    <Input type="checkbox" name="remember"
-                                    innerRef={(input) => this.remember = input}  />
-                                    Remember me
-                                </Label>
-                            </FormGroup>
-                            <Button type="submit" value="submit" color="primary">Login</Button>
-                        </Form>
-                </ModalBody>
-            </Modal> */}
+            </div>
 
             </>
         )

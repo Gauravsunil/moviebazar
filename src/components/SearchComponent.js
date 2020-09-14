@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {searchmovie} from './UserFunctions';
-import {Link} from 'react-router-dom';
 class SearchComponent extends Component{
     constructor(props){
         super(props);
@@ -21,12 +19,6 @@ class SearchComponent extends Component{
         const res = await fetch(url);
         const data = await res.json();
         this.setState({Items:data.results});
-        const search={
-            movie:this.state.movie
-        }
-        searchmovie(search).then(res=>{            
-                     console.log("Search Succesfull!")
-                           })
         this.props.callBackFunction(this.state);
        
       }
@@ -45,11 +37,7 @@ class SearchComponent extends Component{
               <div className="col-2">
                   <button type="submit" className="btn btn-primary"><span className="fa fa-search"></span></button>
           </div>
-          <div classname="col-3">
-              <Link to='/history'>
-                  <button className="btn btn-success" >History</button>
-                  </Link>
-          </div>
+          
           </div>
         </form>
             </div>
